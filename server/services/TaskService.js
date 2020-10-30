@@ -15,6 +15,7 @@ class TaskService {
         if (!data) {
             throw new ApiError("Invalid Id: Cannot Get the Specified Id")
         }
+        return data;
     }
 
     async createTask(rawTaskData) {
