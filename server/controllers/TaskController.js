@@ -54,6 +54,8 @@ export default class TaskController {
             next(error)
         }
     }
+
+    // Delete Task Postman Test: Pass
     async deleteTask(req, res, next) {
         try {
             await _taskService.deleteTask(req.params.id);
