@@ -1,23 +1,40 @@
 import mongoose from 'mongoose';
 import Task from "../models/Task";
+import ApiError from "../utilities/ApiError"
 
 const _repository = mongoose.model("Task", Task)
 
 class TaskService {
-    deleteTask(id) {
-        throw new Error('Method not implemented.');
+
+    async getAllTasks() {
+        return await _repository.find()
     }
-    editTask(id, body) {
-        throw new Error('Method not implemented.');
+
+    async getTaskById(id) {
+        let data = await _repository.findOne({ _id: id })
+        if (!data) {
+            throw new ApiError("Invalid Id: Cannot Get the Specified Id")
+        }
     }
-    createTask(body) {
-        throw new Error('Method not implemented.');
+
+    async createTask(rawTaskData) {
+        let data = await _repository.create(rawTaskData)
+        return data;
     }
-    getTaskById(id) {
-        throw new Error('Method not implemented.');
+
+    async editTask(id, update) {
+        let data = await _repository.findOneAndUpdate({ _id: id }, update, { new: true });
+        if (!data) {
+            throw new ApiError("Invalid id: Cannot Edit specified task")
+        }
+        return data;
     }
-    getAllTasks() {
-        throw new Error('Method not implemented.');
+
+    async deleteTask(id) {
+        let data = await _repository.findOneAndRemove({ _id: id });
+        if (!data) {
+            throw new ApiError("Invalid Id: Cannot Delete specified task")
+        }
     }
 }
 
