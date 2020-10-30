@@ -15,7 +15,7 @@ export default class TaskController {
         next({ status: 404, message: "No Such Route" })
     }
 
-    // Get All Tasks Postman Test: Pass
+    //  Get All Tasks Postman Test: Pass
     async getAllTasks(req, res, next) {
         try {
             let data = await _taskService.getAllTasks()
@@ -34,6 +34,7 @@ export default class TaskController {
         }
     }
 
+    // Create Tasks Postman Test: Pass
     async createTask(req, res, next) {
         try {
             let data = await _taskService.createTask(req.body)
