@@ -11,19 +11,50 @@ export default class TaskController {
             .delete("/:id", this.deleteTask)
     }
 
-    getAllTasks(req, res, next) {
-        throw new Error('Method not implemented.')
+    defaultRoute(req, res, next) {
+        next({ status: 404, message: "No Such Route" })
     }
-    getTaskById(req, res, next) {
-        throw new Error('Method not implemented.')
+
+    async getAllTasks(req, res, next) {
+        try {
+            let data = await _taskService.getAllTasks()
+            return res.send(data);
+        } catch (error) {
+            next(error)
+        }
     }
-    createTask(req, res, next) {
-        throw new Error('Method not implemented.')
+
+    async getTaskById(req, res, next) {
+        try {
+            let data = await _taskService.getTaskById(req.params.id)
+            return res.send(data)
+        } catch (error) {
+            next(error)
+        }
     }
-    editTask(req, res, next) {
-        throw new Error('Method not implemented.')
+
+    async createTask(req, res, next) {
+        try {
+            let data = await _taskService.createTask(req.body)
+            return res.status(201).send(data)
+        } catch (error) {
+            next(error)
+        }
     }
-    deleteTask(req, res, next) {
-        throw new Error('Method not implemented.')
+    async editTask(req, res, next) {
+        try {
+            let data = await _taskService.editTask(req.params.id, req.body);
+            return res.send(data)
+        } catch (error) {
+            next(error)
+        }
+    }
+    async deleteTask(req, res, next) {
+        try {
+            await _taskService.deleteTask(req.params.id);
+            return res.send("Task was successfully deleted")
+        } catch (error) {
+            next(error)
+        }
     }
 }
