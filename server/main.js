@@ -4,6 +4,7 @@ import cors from 'cors'
 import dbContext from "./database/dbconfig"
 
 import TaskController from "./controllers/TaskController"
+import ListController from "./controllers/ListController"
 
 const server = express();
 
@@ -25,6 +26,7 @@ server.use(cors(corsOptions));
 server.use(bp.json());
 
 server.use('/api/tasks', new TaskController().router)
+server.use('/api/lists', new ListController().router)
 
 server.use((error, req, res, next) => {
     res.status(error.status || 400).send({ error: { message: error.message } })

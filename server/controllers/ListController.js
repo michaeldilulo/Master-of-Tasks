@@ -51,6 +51,7 @@ export default class ListController {
         }
     }
 
+    // Delete List Postman Test: Pass
     async deleteList(req, res, next) {
         try {
             await _listService.deleteList(req.params.id);
