@@ -15,6 +15,7 @@ export default class ListController {
         next({ status: 404, message: "No Such Route" })
     }
 
+    // Get All Lists Postman Test: Pass
     async getAllLists(req, res, next) {
         try {
             let data = await _listService.getAllLists()
