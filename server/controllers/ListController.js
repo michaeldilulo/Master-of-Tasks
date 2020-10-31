@@ -25,6 +25,7 @@ export default class ListController {
         }
     }
 
+    // Get List By Id Postman Test: Pass
     async getListById(req, res, next) {
         try {
             let data = await _listService.getListById(req.params.id)
