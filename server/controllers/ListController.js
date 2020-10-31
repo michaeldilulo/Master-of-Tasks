@@ -33,6 +33,7 @@ export default class ListController {
         }
     }
 
+    // Create List Postman Test: Pass
     async createList(req, res, next) {
         try {
             let data = await _listService.createList(req.body)
