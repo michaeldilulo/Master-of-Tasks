@@ -18,7 +18,7 @@ export default class SubListController {
     // Get All Lists Postman Test: Pass
     async getAllSubLists(req, res, next) {
         try {
-            let data = await _subListServiceService.getAllSubLists()
+            let data = await _subListService.getAllSubLists()
             return res.send(data);
         } catch (error) {
             next(error)
