@@ -15,7 +15,7 @@ export default class SubListController {
         next({ status: 404, message: "No Such Route" })
     }
 
-    // Get All Lists Postman Test: Pass
+    // Get All Sub Lists Postman Test: Pass
     async getAllSubLists(req, res, next) {
         try {
             let data = await _subListService.getAllSubLists()
@@ -25,7 +25,6 @@ export default class SubListController {
         }
     }
 
-    // Get List By Id Postman Test: Pass
     async getSubListById(req, res, next) {
         try {
             let data = await _subListService.getSubListById(req.params.id)
@@ -35,7 +34,6 @@ export default class SubListController {
         }
     }
 
-    // Create List Postman Test: Pass
     async createSubList(req, res, next) {
         try {
             let data = await _subListService.createSubList(req.body)
@@ -45,7 +43,6 @@ export default class SubListController {
         }
     }
 
-    // Edit List Postman Test: Pass
     async editSubList(req, res, next) {
         try {
             let data = await _subListService.editSubList(req.params.id, req.body);
@@ -55,11 +52,10 @@ export default class SubListController {
         }
     }
 
-    // Delete List Postman Test: Pass
     async deleteSubList(req, res, next) {
         try {
             await _subListService.deleteSubList(req.params.id);
-            return res.send("List was successfully deleted")
+            return res.send("Sub list was successfully deleted")
         } catch (error) {
             next(error)
         }
