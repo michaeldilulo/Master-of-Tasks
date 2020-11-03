@@ -35,6 +35,7 @@ export default class SubListController {
         }
     }
 
+    // Create Sub Lists Postman Test: Pass
     async createSubList(req, res, next) {
         try {
             let data = await _subListService.createSubList(req.body)
