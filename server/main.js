@@ -5,6 +5,7 @@ import dbContext from "./database/dbconfig"
 
 import TaskController from "./controllers/TaskController"
 import ListController from "./controllers/ListController"
+import SubListController from './controllers/SubListController';
 
 const server = express();
 
@@ -27,6 +28,7 @@ server.use(bp.json());
 
 server.use('/api/tasks', new TaskController().router)
 server.use('/api/lists', new ListController().router)
+server.use('/api/sublists', new SubListController().router)
 
 server.use((error, req, res, next) => {
     res.status(error.status || 400).send({ error: { message: error.message } })
