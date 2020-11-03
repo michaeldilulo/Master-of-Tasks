@@ -54,6 +54,7 @@ export default class SubListController {
         }
     }
 
+    // Delete Sub Lists Postman Test: Pass
     async deleteSubList(req, res, next) {
         try {
             await _subListService.deleteSubList(req.params.id);
