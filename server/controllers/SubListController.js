@@ -44,7 +44,7 @@ export default class SubListController {
             next(error)
         }
     }
-
+    // Edit Sub Lists Postman Test: Pass
     async editSubList(req, res, next) {
         try {
             let data = await _subListService.editSubList(req.params.id, req.body);
