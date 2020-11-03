@@ -25,6 +25,7 @@ export default class SubListController {
         }
     }
 
+    // Get Sub List by id Postman Test: Pass
     async getSubListById(req, res, next) {
         try {
             let data = await _subListService.getSubListById(req.params.id)
