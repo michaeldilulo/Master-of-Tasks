@@ -1,19 +1,23 @@
 import express from 'express'
 import _taskService from "../services/TaskService"
+import _listService from "../services/ListService"
 
 export default class TaskController {
     constructor() {
         this.router = express.Router()
             .get("", this.getAllTasks)
             .get("/:id", this.getTaskById)
+            .get(":id/lists", this.getListsByTaskId)
             .post("", this.createTask)
             .put("/:id", this.editTask)
             .delete("/:id", this.deleteTask)
     }
 
+
     defaultRoute(req, res, next) {
         next({ status: 404, message: "No Such Route" })
     }
+
 
     //  Get All Tasks Postman Test: Pass
     async getAllTasks(req, res, next) {
@@ -29,6 +33,15 @@ export default class TaskController {
     async getTaskById(req, res, next) {
         try {
             let data = await _taskService.getTaskById(req.params.id)
+            return res.send(data)
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    async getListsByTaskId(req, res, next) {
+        try {
+            let data = await _listService.getListsByTaskId(req.params.id)
             return res.send(data)
         } catch (error) {
             next(error)

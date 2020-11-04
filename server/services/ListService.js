@@ -18,6 +18,14 @@ class ListService {
         return data;
     }
 
+    async getListsByTaskId(id) {
+        let data = await _repository.find({ task: id })
+        if (!data) {
+            throw new ApiError("Invalid Id: Cannot retrieve lists from Task Id")
+        }
+        return data;
+    }
+
     async createList(rawListData) {
         let data = await _repository.create(rawListData)
         return data;
