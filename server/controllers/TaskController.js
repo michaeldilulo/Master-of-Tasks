@@ -7,7 +7,7 @@ export default class TaskController {
         this.router = express.Router()
             .get("", this.getAllTasks)
             .get("/:id", this.getTaskById)
-            .get(":id/lists", this.getListsByTaskId)
+            .get("/:id/lists", this.getListsByTaskId)
             .post("", this.createTask)
             .put("/:id", this.editTask)
             .delete("/:id", this.deleteTask)

@@ -1,14 +1,25 @@
 import express from 'express'
 import _listService from "../services/ListService"
+import _subListService from "../services/SubListService"
 
 export default class ListController {
     constructor() {
         this.router = express.Router()
             .get("", this.getAllLists)
             .get("/:id", this.getListById)
+            .get("/:id/sub-lists", this.getSubListsByListId)
             .post("", this.createList)
             .put("/:id", this.editList)
             .delete("/:id", this.deleteList)
+    }
+
+    async getSubListsByListId(req, res, next) {
+        try {
+            let data = await _subListService.getSubListsByListId(req.params.id)
+            return res.send(data)
+        } catch (error) {
+            next(error)
+        }
     }
 
     defaultRoute(req, res, next) {

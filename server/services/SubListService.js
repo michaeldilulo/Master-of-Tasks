@@ -5,6 +5,13 @@ import ApiError from "../utilities/ApiError"
 const _repository = mongoose.model("SubList", SubList)
 
 class SubListService {
+    async getSubListsByListId(id) {
+        let data = await _repository.find({ list: id })
+        if (!data) {
+            throw new ApiError("Invalid Id: Cannot retrieve Sub Lists from List Id")
+        }
+        return data;
+    }
 
     async getAllSubLists() {
         return await _repository.find()
