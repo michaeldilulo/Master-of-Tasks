@@ -4,8 +4,10 @@
       <div class="row">
         <div class="col-md-12 p-0">
           <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-            <p class="navbar-brand">Master-of-Tasks</p>
-            <i class="devicon-vuejs-plain text-success"></i>
+            <p class="navbar-brand text-light mr-2">
+              Master-of-Tasks
+            </p>
+            <i class="devicon-vuejs-plain text-light"></i>
             <button
               class="navbar-toggler"
               type="button"
@@ -36,5 +38,10 @@ export default {
 <style>
 i {
   font-size: 30px;
+}
+
+p.navbar-brand.text-light {
+  margin: auto;
+  font-size: 22px;
 }
 </style>
