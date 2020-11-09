@@ -1,15 +1,17 @@
 <template>
-  <div class="boards-layout"></div>
+  <div class="boards-layout">
+    <Navbar />
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+import Navbar from "@/components/Navbar.vue";
 
 export default {
   name: "boardsLayout",
   components: {
-    // HelloWorld
+    Navbar
   }
 };
 </script>
