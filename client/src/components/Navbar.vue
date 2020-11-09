@@ -2,7 +2,7 @@
   <div class="navbar-tasks">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 p-0">
+        <div class="col-md-12 p-0 mb-5">
           <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
             <p class="navbar-brand text-light mr-2">
               Master-of-Tasks
