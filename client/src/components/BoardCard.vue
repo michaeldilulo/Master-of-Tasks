@@ -5,7 +5,7 @@
         <div class="col-md-3 mt-4 mb-4" v-for="task in task" :key="task.id">
           <div class="card bg-dark">
             <div class="card-body">
-              <h3 class="card-title text-danger d-flex justify-content-center">
+              <h3 class="card-title text-light d-flex justify-content-center">
                 {{ task.title }}
               </h3>
               <p class="text-light" href="#">
@@ -15,7 +15,7 @@
                 {{ task.description }}
               </p>
               <a href="#" class="btn btn-danger d-flex justify-content-center">
-                Details</a
+                Click to view Details</a
               >
             </div>
           </div>

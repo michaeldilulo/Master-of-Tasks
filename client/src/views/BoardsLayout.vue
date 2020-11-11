@@ -20,12 +20,24 @@ export default {
 </script>
 
 <style>
-.boards-layout {
-  background: url("../assets/corkboard.jpg") no-repeat center center fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  position: absolute;
+@media (min-width: 577px) {
+  .boards-layout {
+    background: url("../assets/corkboard.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+@media (max-width: 576px) {
+  .boards-layout {
+    background: url("../assets/corkboard.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+  }
 }
 </style>
