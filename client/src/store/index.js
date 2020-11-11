@@ -26,6 +26,10 @@ export default createStore({
     async getAllTasks({ commit }) {
       let res = await _masterOfTaskApi.get("tasks")
       commit("getAllTasks", res.data)
+    },
+    async deleteTask({ dispatch }, id) {
+      await _masterOfTaskApi.delete("tasks/" + id)
+      dispatch("getAllTasks")
     }
   },
   modules: {}

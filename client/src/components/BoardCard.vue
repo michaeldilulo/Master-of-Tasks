@@ -17,6 +17,12 @@
               <a href="#" class="btn btn-danger d-flex justify-content-center">
                 Click to view Details</a
               >
+              <button
+                class="btn btn-warning mt-3"
+                @click="deleteTask(task._id)"
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>
@@ -28,6 +34,11 @@
 <script>
 export default {
   name: "board-card",
+  methods: {
+    deleteTask(_id) {
+      this.$store.dispatch("deleteTask", _id);
+    }
+  },
   computed: {
     task() {
       return this.$store.state.task;
