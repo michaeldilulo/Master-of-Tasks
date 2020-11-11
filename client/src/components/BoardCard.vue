@@ -2,18 +2,17 @@
   <div class="board-card">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3 mt-4 mb-4">
+        <div class="col-md-3 mt-4 mb-4" v-for="task in task" :key="task.id">
           <div class="card bg-dark">
             <div class="card-body">
               <h3 class="card-title text-danger d-flex justify-content-center">
-                { Board Title }
+                {{ task.title }}
               </h3>
               <p class="text-light" href="#">
                 <strong>Description:</strong>
               </p>
               <p class="card-text text-light">
-                { This is going to be a description of the board for the user if
-                they choose to input one }
+                {{ task.description }}
               </p>
               <a href="#" class="btn btn-danger d-flex justify-content-center">
                 Details</a
@@ -28,7 +27,12 @@
 
 <script>
 export default {
-  name: "board-card"
+  name: "board-card",
+  computed: {
+    task() {
+      return this.$store.state.task;
+    }
+  }
 };
 </script>
 

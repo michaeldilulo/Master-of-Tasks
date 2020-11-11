@@ -9,6 +9,8 @@
   "author": "Mike DiLulo",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.0",
+    "axois": "0.0.1-security",
     "bootstrap": "^4.5.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
