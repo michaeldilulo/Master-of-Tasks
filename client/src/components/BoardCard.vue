@@ -14,9 +14,16 @@
               <p class="card-text text-light">
                 {{ task.description }}
               </p>
-              <a href="#" class="btn btn-danger d-flex justify-content-center">
-                Click to view Details</a
+              <router-link
+                :to="{ name: 'SingleTask', params: { id: task._id } }"
               >
+                <a
+                  href="#"
+                  class="btn btn-danger d-flex justify-content-center"
+                >
+                  Click to view Details
+                </a>
+              </router-link>
               <button
                 class="btn btn-warning mt-3"
                 @click="deleteTask(task._id)"
@@ -37,13 +44,13 @@ export default {
   methods: {
     deleteTask(_id) {
       this.$store.dispatch("deleteTask", _id);
-    }
+    },
   },
   computed: {
     task() {
       return this.$store.state.task;
-    }
-  }
+    },
+  },
 };
 </script>
 
