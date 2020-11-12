@@ -12,15 +12,14 @@
 
 <script>
 export default {
-  name: "footer"
+  name: "footer",
 };
 </script>
 
 <style>
 .footer {
   position: fixed;
-  left: 0;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
   background-color: transparent;
   color: white;
