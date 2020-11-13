@@ -12,7 +12,7 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-2 mt-3">
+        <div class="col-md-3 mt-3">
           <form @submit.prevent="addTask" class="bg-dark p-3 task-form">
             <h3 class="d-flex justify-content-center text-light mb-3">
               Enter Task Name

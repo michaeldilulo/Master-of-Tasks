@@ -1,18 +1,22 @@
 <template>
   <div class="single-task">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <h1>Hello World. This is the ID Task Page</h1>
-        </div>
-      </div>
-    </div>
+    <SingleTaskNavbar />
+    <h1 class="text-primary">{{ task }}</h1>
   </div>
 </template>
 
 <script>
+import SingleTaskNavbar from "@/components/SingleTaskNavbar.vue";
 export default {
   name: "single-task",
+  computed: {
+    task() {
+      return this.$store.state.task;
+    },
+  },
+  components: {
+    SingleTaskNavbar,
+  },
 };
 </script>
 
