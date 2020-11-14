@@ -8,7 +8,8 @@ let _masterOfTaskApi = axios.create({
 
 export default createStore({
   state: {
-    task: []
+    task: [],
+    // list: []
   },
   mutations: {
     createTask(state, task) {
@@ -16,7 +17,13 @@ export default createStore({
     },
     getAllTasks(state, data) {
       state.task = data;
-    }
+    },
+    // createList(state, list) {
+    //   state.list.push(list)
+    // },
+    // getListByTaskId(state, list) {
+    //   state.list = list;
+    // }
   },
   actions: {
     async addTask({ commit }, task) {
